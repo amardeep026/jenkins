@@ -13,7 +13,7 @@ pipeline{
         }
         stage ("Deploy"){
             steps{
-                sh "docker run -d -p 8000:8000 --name django django:latest "
+                sh "docker run -d -p 8000:8000 --name django django:latest"
             }
         }
         
