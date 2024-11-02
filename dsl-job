@@ -1,0 +1,39 @@
+job('MyProject') { 
+  scm {
+    git {
+      remote {
+        url('https://github.com/iam-veeramalla/Jenkins-Zero-To-Hero.git')
+      }
+      branch('main')
+      extensions {
+        cleanBeforeCheckout()
+      }
+    }
+  }
+  steps {
+    shell('echo "Building MyProject"')
+  }
+  publishers {
+    archiveArtifacts('**/*')
+  }
+}
+//copy same job and make relevant changes in it
+job('Amar-second Project') { 
+  scm {
+    git {
+      remote {
+        url('https://github.com/iam-veeramalla/Jenkins-Zero-To-Hero.git')
+      }
+      branch('main')
+      extensions {
+        cleanBeforeCheckout()
+      }
+    }
+  }
+  steps {
+    shell('echo "Building MyProject"')
+  }
+  publishers {
+    archiveArtifacts('**/*')
+  }
+}
